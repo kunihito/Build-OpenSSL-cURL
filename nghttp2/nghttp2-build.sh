@@ -261,17 +261,15 @@ lipo \
 echo -e "${bold}Building iOS libraries (bitcode)${dim}"
 
 buildIOS "arm64" "bitcode"
-buildIOS "arm64e" "bitcode"
+#buildIOS "arm64e" "bitcode"
 buildIOS "x86_64" "bitcode"
 
 lipo \
 	"${NGHTTP2}/iOS/arm64/lib/libnghttp2.a" \
-	"${NGHTTP2}/iOS/arm64e/lib/libnghttp2.a" \
 	"${NGHTTP2}/iOS/x86_64/lib/libnghttp2.a" \
 	-create -output "${NGHTTP2}/lib/libnghttp2_iOS.a"
 lipo \
         "${NGHTTP2}/iOS/arm64/lib/libnghttp2_asio.a" \
-        "${NGHTTP2}/iOS/arm64e/lib/libnghttp2_asio.a" \
         "${NGHTTP2}/iOS/x86_64/lib/libnghttp2_asio.a" \
         -create -output "${NGHTTP2}/lib/libnghttp2_asio_iOS.a"
 
