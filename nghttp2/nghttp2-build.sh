@@ -34,9 +34,9 @@ alertdim="\033[0m${red}\033[2m"
 trap 'echo -e "${alert}** ERROR with Build - Check /tmp/nghttp2*.log${alertdim}"; tail -3 /tmp/nghttp2*.log' INT TERM EXIT
 
 NGHTTP2_VERNUM="1.40.0"
-IOS_MIN_SDK_VERSION="7.1"
+IOS_MIN_SDK_VERSION="10.0"
 IOS_SDK_VERSION=""
-TVOS_MIN_SDK_VERSION="9.0"
+TVOS_MIN_SDK_VERSION="10.0"
 TVOS_SDK_VERSION=""
 
 usage ()
@@ -170,9 +170,9 @@ buildIOS()
    
 	echo -e "${subbold}Building ${NGHTTP2_VERSION} for ${PLATFORM} ${IOS_SDK_VERSION} ${archbold}${ARCH}${dim}"
         if [[ "${ARCH}" == "arm64" || "${ARCH}" == "arm64e"  ]]; then
-		env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_IOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_IOS} -lssl -lcrypto" ./configure --with-boost="${BOOST_ROOT_IOS}" --enable-asio-lib --disable-shared --disable-app --disable-threads --enable-lib-only  --prefix="${NGHTTP2}/iOS/${ARCH}" --host="arm-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
+		env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_IOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_IOS} -lssl -lcrypto" ./configure --with-boost="${BOOST_ROOT_IOS}/${ARCH}" --enable-asio-lib --disable-shared --disable-app --disable-threads --enable-lib-only  --prefix="${NGHTTP2}/iOS/${ARCH}" --host="arm-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
         else
-		env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_IOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_IOS} -lssl -lcrypto" ./configure --with-boost="${BOOST_ROOT_IOS}" --enable-asio-lib --disable-shared --disable-app --disable-threads --enable-lib-only --prefix="${NGHTTP2}/iOS/${ARCH}" --host="${ARCH}-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
+		env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_IOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_IOS} -lssl -lcrypto" ./configure --with-boost="${BOOST_ROOT_IOS}/${ARCH}" --enable-asio-lib --disable-shared --disable-app --disable-threads --enable-lib-only --prefix="${NGHTTP2}/iOS/${ARCH}" --host="${ARCH}-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
         fi
 
         make -j8 >> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log" 2>&1
@@ -261,7 +261,7 @@ lipo \
 echo -e "${bold}Building iOS libraries (bitcode)${dim}"
 
 buildIOS "arm64" "bitcode"
-#buildIOS "arm64e" "bitcode"
+buildIOS "arm64e" "bitcode"
 buildIOS "x86_64" "bitcode"
 
 lipo \
