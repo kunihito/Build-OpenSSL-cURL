@@ -113,9 +113,9 @@ buildMac()
 	pushd . > /dev/null
 	cd "${OPENSSL_VERSION}"
 	if [[ "$OPENSSL_VERSION" = "openssl-1.1.1"* ]]; then
-		./Configure no-asm ${TARGET} -no-shared  --prefix="/tmp/${OPENSSL_VERSION}-${ARCH}" --openssldir="/tmp/${OPENSSL_VERSION}-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-${ARCH}.log"
+		./Configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" no-asm ${TARGET} -no-shared  --prefix="/tmp/${OPENSSL_VERSION}-${ARCH}" --openssldir="/tmp/${OPENSSL_VERSION}-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-${ARCH}.log"
 	else
-		./Configure no-asm ${TARGET} -no-shared  --openssldir="/tmp/${OPENSSL_VERSION}-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-${ARCH}.log"
+		./Configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" no-asm ${TARGET} -no-shared  --openssldir="/tmp/${OPENSSL_VERSION}-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-${ARCH}.log"
 	fi
 	make >> "/tmp/${OPENSSL_VERSION}-${ARCH}.log" 2>&1
 	make install_sw >> "/tmp/${OPENSSL_VERSION}-${ARCH}.log" 2>&1
@@ -153,16 +153,16 @@ buildIOS()
 			TARGET="darwin64-x86_64-cc"
 		fi
 		if [[ "$OPENSSL_VERSION" = "openssl-1.1.1"* ]]; then
-			./Configure no-asm ${TARGET} -no-shared --prefix="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
+			./Configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" no-asm ${TARGET} -no-shared --prefix="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
 		else
-			./Configure no-asm ${TARGET} -no-shared --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
+			./Configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" no-asm ${TARGET} -no-shared --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
 		fi
 	else
 		if [[ "$OPENSSL_VERSION" = "openssl-1.1.1"* ]]; then
 			# export CC="${BUILD_TOOLS}/usr/bin/gcc -arch ${ARCH}"
-			./Configure iphoneos-cross DSO_LDFLAGS=-fembed-bitcode --prefix="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" -no-shared --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
+			./Configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" iphoneos-cross DSO_LDFLAGS=-fembed-bitcode --prefix="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" -no-shared --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
 		else
-			./Configure iphoneos-cross -no-shared --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
+			./Configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" iphoneos-cross -no-shared --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
 		fi
 	fi
 	# add -isysroot to CC=
@@ -216,16 +216,16 @@ buildTVOS()
 
 	if [[ "${ARCH}" == "x86_64" ]]; then
 		if [[ "$OPENSSL_VERSION" = "openssl-1.1.1"* ]]; then
-			./Configure no-asm darwin64-x86_64-cc -no-shared --prefix="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" --openssldir="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}.log"
+			./Configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" no-asm darwin64-x86_64-cc -no-shared --prefix="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" --openssldir="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}.log"
 		else
-			./Configure no-asm darwin64-x86_64-cc --openssldir="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}.log"
+			./Configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" no-asm darwin64-x86_64-cc --openssldir="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}.log"
 		fi
 	else
 		export CC="${BUILD_TOOLS}/usr/bin/gcc -fembed-bitcode -arch ${ARCH}"
 		if [[ "$OPENSSL_VERSION" = "openssl-1.1.1"* ]]; then
-			./Configure iphoneos-cross DSO_LDFLAGS=-fembed-bitcode --prefix="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" -no-shared --openssldir="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}.log"
+			./Configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" iphoneos-cross DSO_LDFLAGS=-fembed-bitcode --prefix="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" -no-shared --openssldir="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}.log"
 		else
-			./Configure iphoneos-cross --openssldir="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}.log"
+			./Configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" iphoneos-cross --openssldir="/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}" $CUSTOMCONFIG &> "/tmp/${OPENSSL_VERSION}-tvOS-${ARCH}.log"
 		fi
 	fi
 	# add -isysroot to CC=
@@ -298,29 +298,20 @@ lipo \
 	-create -output Mac/lib/libssl.a
 
 echo -e "${bold}Building iOS libraries${dim}"
-buildIOS "armv7"
-buildIOS "armv7s"
 buildIOS "arm64"
 buildIOS "arm64e"
-buildIOS "i386"
 buildIOS "x86_64"
 
 echo "  Copying headers and libraries"
 cp /tmp/${OPENSSL_VERSION}-iOS-arm64/include/openssl/* iOS/include/openssl/
 
 lipo \
-	"/tmp/${OPENSSL_VERSION}-iOS-armv7/lib/libcrypto.a" \
-	"/tmp/${OPENSSL_VERSION}-iOS-armv7s/lib/libcrypto.a" \
-	"/tmp/${OPENSSL_VERSION}-iOS-i386/lib/libcrypto.a" \
 	"/tmp/${OPENSSL_VERSION}-iOS-arm64/lib/libcrypto.a" \
 	"/tmp/${OPENSSL_VERSION}-iOS-arm64e/lib/libcrypto.a" \
 	"/tmp/${OPENSSL_VERSION}-iOS-x86_64/lib/libcrypto.a" \
 	-create -output iOS/lib/libcrypto.a
 
 lipo \
-	"/tmp/${OPENSSL_VERSION}-iOS-armv7/lib/libssl.a" \
-	"/tmp/${OPENSSL_VERSION}-iOS-armv7s/lib/libssl.a" \
-	"/tmp/${OPENSSL_VERSION}-iOS-i386/lib/libssl.a" \
 	"/tmp/${OPENSSL_VERSION}-iOS-arm64/lib/libssl.a" \
 	"/tmp/${OPENSSL_VERSION}-iOS-arm64e/lib/libssl.a" \
 	"/tmp/${OPENSSL_VERSION}-iOS-x86_64/lib/libssl.a" \

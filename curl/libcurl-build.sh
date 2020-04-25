@@ -137,7 +137,7 @@ buildMac()
 	export LDFLAGS="-arch ${ARCH} -L${OPENSSL}/Mac/lib ${NGHTTP2LIB}"
 	pushd . > /dev/null
 	cd "${CURL_VERSION}"
-	./configure -prefix="/tmp/${CURL_VERSION}-${ARCH}" --disable-shared --enable-static -with-random=/dev/urandom --with-ssl=${OPENSSL}/Mac ${NGHTTP2CFG} --host=${HOST} &> "/tmp/${CURL_VERSION}-${ARCH}.log"
+	./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" -prefix="/tmp/${CURL_VERSION}-${ARCH}" --disable-shared --enable-static -with-random=/dev/urandom --with-ssl=${OPENSSL}/Mac ${NGHTTP2CFG} --host=${HOST} &> "/tmp/${CURL_VERSION}-${ARCH}.log"
 
 	make -j8 >> "/tmp/${CURL_VERSION}-${ARCH}.log" 2>&1
 	make install >> "/tmp/${CURL_VERSION}-${ARCH}.log" 2>&1
@@ -183,9 +183,9 @@ buildIOS()
 	echo -e "${subbold}Building ${CURL_VERSION} for ${PLATFORM} ${IOS_SDK_VERSION} ${archbold}${ARCH}${dim} ${BITCODE}"
 
 	if [[ "${ARCH}" == *"arm64"* || "${ARCH}" == "arm64e" ]]; then
-		./configure -prefix="/tmp/${CURL_VERSION}-iOS-${ARCH}-${BITCODE}" --disable-shared --enable-static -with-random=/dev/urandom --with-ssl=${OPENSSL}/iOS ${NGHTTP2CFG} --host="arm-apple-darwin" &> "/tmp/${CURL_VERSION}-iOS-${ARCH}-${BITCODE}.log"
+		./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib"  -prefix="/tmp/${CURL_VERSION}-iOS-${ARCH}-${BITCODE}" --disable-shared --enable-static -with-random=/dev/urandom --with-ssl=${OPENSSL}/iOS ${NGHTTP2CFG} --host="arm-apple-darwin" &> "/tmp/${CURL_VERSION}-iOS-${ARCH}-${BITCODE}.log"
 	else
-		./configure -prefix="/tmp/${CURL_VERSION}-iOS-${ARCH}-${BITCODE}" --disable-shared --enable-static -with-random=/dev/urandom --with-ssl=${OPENSSL}/iOS ${NGHTTP2CFG} --host="${ARCH}-apple-darwin" &> "/tmp/${CURL_VERSION}-iOS-${ARCH}-${BITCODE}.log"
+		./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" -prefix="/tmp/${CURL_VERSION}-iOS-${ARCH}-${BITCODE}" --disable-shared --enable-static -with-random=/dev/urandom --with-ssl=${OPENSSL}/iOS ${NGHTTP2CFG} --host="${ARCH}-apple-darwin" &> "/tmp/${CURL_VERSION}-iOS-${ARCH}-${BITCODE}.log"
 	fi
 
 	make -j8 >> "/tmp/${CURL_VERSION}-iOS-${ARCH}-${BITCODE}.log" 2>&1
@@ -223,7 +223,7 @@ buildTVOS()
    
 	echo -e "${subbold}Building ${CURL_VERSION} for ${PLATFORM} ${TVOS_SDK_VERSION} ${archbold}${ARCH}${dim}"
 
-	./configure -prefix="/tmp/${CURL_VERSION}-tvOS-${ARCH}" --host="arm-apple-darwin" --disable-shared -with-random=/dev/urandom --disable-ntlm-wb --with-ssl="${OPENSSL}/tvOS" ${NGHTTP2CFG} &> "/tmp/${CURL_VERSION}-tvOS-${ARCH}.log"
+	./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" -prefix="/tmp/${CURL_VERSION}-tvOS-${ARCH}" --host="arm-apple-darwin" --disable-shared -with-random=/dev/urandom --disable-ntlm-wb --with-ssl="${OPENSSL}/tvOS" ${NGHTTP2CFG} &> "/tmp/${CURL_VERSION}-tvOS-${ARCH}.log"
 
 	# Patch to not use fork() since it's not available on tvOS
         LANG=C sed -i -- 's/define HAVE_FORK 1/define HAVE_FORK 0/' "./lib/curl_config.h"
@@ -267,17 +267,11 @@ lipo \
 	-create -output lib/libcurl_Mac.a
 
 echo -e "${bold}Building iOS libraries (bitcode)${dim}"
-buildIOS "armv7" "bitcode"
-buildIOS "armv7s" "bitcode"
 buildIOS "arm64" "bitcode"
 buildIOS "arm64e" "bitcode"
 buildIOS "x86_64" "bitcode"
-buildIOS "i386" "bitcode"
 
 lipo \
-	"/tmp/${CURL_VERSION}-iOS-armv7-bitcode/lib/libcurl.a" \
-	"/tmp/${CURL_VERSION}-iOS-armv7s-bitcode/lib/libcurl.a" \
-	"/tmp/${CURL_VERSION}-iOS-i386-bitcode/lib/libcurl.a" \
 	"/tmp/${CURL_VERSION}-iOS-arm64-bitcode/lib/libcurl.a" \
 	"/tmp/${CURL_VERSION}-iOS-arm64e-bitcode/lib/libcurl.a" \
 	"/tmp/${CURL_VERSION}-iOS-x86_64-bitcode/lib/libcurl.a" \
@@ -286,17 +280,11 @@ lipo \
 
 if [[ "${NOBITCODE}" == "yes" ]]; then
 	echo -e "${bold}Building iOS libraries (nobitcode)${dim}"
-	buildIOS "armv7" "nobitcode"
-	buildIOS "armv7s" "nobitcode"
 	buildIOS "arm64" "nobitcode"
 	buildIOS "arm64e" "nobitcode"
 	buildIOS "x86_64" "nobitcode"
-	buildIOS "i386" "nobitcode"
 
 	lipo \
-		"/tmp/${CURL_VERSION}-iOS-armv7-nobitcode/lib/libcurl.a" \
-		"/tmp/${CURL_VERSION}-iOS-armv7s-nobitcode/lib/libcurl.a" \
-		"/tmp/${CURL_VERSION}-iOS-i386-nobitcode/lib/libcurl.a" \
 		"/tmp/${CURL_VERSION}-iOS-arm64-nobitcode/lib/libcurl.a" \
 		"/tmp/${CURL_VERSION}-iOS-arm64e-nobitcode/lib/libcurl.a" \
 		"/tmp/${CURL_VERSION}-iOS-x86_64-nobitcode/lib/libcurl.a" \

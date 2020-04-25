@@ -1,0 +1,4 @@
+curl-7.50.1.tar.gz
+curl-7.50.1/
+include/
+lib/
