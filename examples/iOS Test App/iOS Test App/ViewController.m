@@ -182,7 +182,7 @@ int iOSCurlProgressCallback(void *clientp, double dltotal, double dlnow, double 
     
     // Verify URL
     if (!_urlText.text || [_urlText.text isEqualToString:@""]) {
-        _urlText.text = @"http://www.apple.com";  // no address provided, fill in default
+        _urlText.text = @"https://www.google.co.jp";  // no address provided, fill in default
     }
     
     if (_urlText.text && ![_urlText.text isEqualToString:@""]) {

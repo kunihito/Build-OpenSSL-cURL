@@ -33,13 +33,13 @@ alertdim="\033[0m${red}\033[2m"
 # set trap to help debug any build errors
 trap 'echo -e "${alert}** ERROR with Build - Check /tmp/curl*.log${alertdim}"; tail -3 /tmp/curl*.log' INT TERM EXIT
 
-CURL_VERSION="curl-7.50.1"
+CURL_VERSION="curl-7.68.0"
 IOS_SDK_VERSION="" 
 IOS_MIN_SDK_VERSION="7.1"
 TVOS_SDK_VERSION="" 
 TVOS_MIN_SDK_VERSION="9.0"
 IPHONEOS_DEPLOYMENT_TARGET="6.0"
-nohttp2="0"
+nohttp2="1"
 
 usage ()
 {
