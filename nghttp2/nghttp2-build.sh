@@ -118,7 +118,6 @@ buildMac()
 {
 	ARCH=$1
         HOST="i386-apple-darwin"
-
 	echo -e "${subbold}Building ${NGHTTP2_VERSION} for ${archbold}${ARCH}${dim}"
 
 	TARGET="darwin-i386-cc"
@@ -133,7 +132,7 @@ buildMac()
 	
         pushd . > /dev/null
 	cd "${NGHTTP2_VERSION}"
-	env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_MACOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_MACOS} -lssl -lcrypto" ./configure --with-boost="${BOOST_ROOT_MACOS}/${ARCH}" --enable-asio-lib --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/Mac/${ARCH}" --host=${HOST} &> "/tmp/${NGHTTP2_VERSION}-${ARCH}.log"
+	env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_MACOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_MACOS} -lssl -lcrypto" ./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" --with-boost="${BOOST_ROOT_MACOS}/${ARCH}" --enable-asio-lib --enable-lib-only --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/Mac/${ARCH}" --host=${HOST} &> "/tmp/${NGHTTP2_VERSION}-${ARCH}.log"
 	make >> "/tmp/${NGHTTP2_VERSION}-${ARCH}.log" 2>&1
 	make install >> "/tmp/${NGHTTP2_VERSION}-${ARCH}.log" 2>&1
 	make clean >> "/tmp/${NGHTTP2_VERSION}-${ARCH}.log" 2>&1
@@ -170,9 +169,9 @@ buildIOS()
    
 	echo -e "${subbold}Building ${NGHTTP2_VERSION} for ${PLATFORM} ${IOS_SDK_VERSION} ${archbold}${ARCH}${dim}"
         if [[ "${ARCH}" == "arm64" || "${ARCH}" == "arm64e"  ]]; then
-		env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_IOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_IOS} -lssl -lcrypto" ./configure --with-boost="${BOOST_ROOT_IOS}/${ARCH}" --enable-asio-lib --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/iOS/${ARCH}" --host="arm-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
+		env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_IOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_IOS} -lssl -lcrypto" ./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" --with-boost="${BOOST_ROOT_IOS}/${ARCH}" --enable-asio-lib --enable-lib-only --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/iOS/${ARCH}" --host="arm-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
         else
-		env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_IOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_IOS} -lssl -lcrypto" ./configure --with-boost="${BOOST_ROOT_IOS}/${ARCH}" --enable-asio-lib --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/iOS/${ARCH}" --host="${ARCH}-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
+		env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_IOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_IOS} -lssl -lcrypto" ./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib"  --with-boost="${BOOST_ROOT_IOS}/${ARCH}" --enable-asio-lib --enable-lib-only --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/iOS/${ARCH}" --host="${ARCH}-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
         fi
 
         make -j8 >> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log" 2>&1
@@ -212,7 +211,7 @@ buildTVOS()
 	# LANG=C sed -i -- 's/D\_REENTRANT\:iOS/D\_REENTRANT\:tvOS/' "./Configure"
 	# chmod u+x ./Configure
 	
-	env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_TVOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_TVOS} -lssl -lcrypto" ./configure --with-boost="${BOOST_ROOT_TVOS}/${ARCH}" --enable-asio-lib --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/tvOS/${ARCH}" --host="arm-apple-darwin" &> "/tmp/${CURL_VERSION}-tvOS-${ARCH}.log"
+	env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_TVOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_TVOS} -lssl -lcrypto" ./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib"  --with-boost="${BOOST_ROOT_TVOS}/${ARCH}" --enable-asio-lib --enable-lib-only --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/tvOS/${ARCH}" --host="arm-apple-darwin" &> "/tmp/${CURL_VERSION}-tvOS-${ARCH}.log"
 	LANG=C sed -i -- 's/define HAVE_FORK 1/define HAVE_FORK 0/' "co"
 
 	# add -isysroot to CC=

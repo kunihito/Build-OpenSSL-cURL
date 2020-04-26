@@ -2,6 +2,10 @@ examples/*
 archive/libcurl-7.68.0-openssl-1.1.1d-nghttp2-1.40.0/
 curl/curl-7.68.0.tar.gz
 curl/curl-7.68.0/
+curl/curl-7.50.1.tar.gz
+curl/curl-7.50.1/
+curl/include/
+curl/lib/
 nghttp2/Mac/
 nghttp2/iOS/
 nghttp2/lib/
