@@ -34,9 +34,9 @@ alertdim="\033[0m${red}\033[2m"
 trap 'echo -e "${alert}** ERROR with Build - Check /tmp/nghttp2*.log${alertdim}"; tail -3 /tmp/nghttp2*.log' INT TERM EXIT
 
 NGHTTP2_VERNUM="1.40.0"
-IOS_MIN_SDK_VERSION="7.1"
+IOS_MIN_SDK_VERSION="10.0"
 IOS_SDK_VERSION=""
-TVOS_MIN_SDK_VERSION="9.0"
+TVOS_MIN_SDK_VERSION="10.0"
 TVOS_SDK_VERSION=""
 
 usage ()
@@ -118,7 +118,6 @@ buildMac()
 {
 	ARCH=$1
         HOST="i386-apple-darwin"
-
 	echo -e "${subbold}Building ${NGHTTP2_VERSION} for ${archbold}${ARCH}${dim}"
 
 	TARGET="darwin-i386-cc"
@@ -127,13 +126,13 @@ buildMac()
 		TARGET="darwin64-x86_64-cc"
 	fi
 
-	export CC="${BUILD_TOOLS}/usr/bin/clang -fembed-bitcode"
-        export CFLAGS="-arch ${ARCH} -pipe -Os -gdwarf-2 -fembed-bitcode"
+	export CC="${BUILD_TOOLS}/usr/bin/clang"
+        export CFLAGS="-arch ${ARCH} -pipe -Os -gdwarf-2"
         export LDFLAGS="-arch ${ARCH}"
-
-	pushd . > /dev/null
+	
+        pushd . > /dev/null
 	cd "${NGHTTP2_VERSION}"
-	./configure --disable-shared --disable-app --disable-threads --enable-lib-only --prefix="${NGHTTP2}/Mac/${ARCH}" --host=${HOST} &> "/tmp/${NGHTTP2_VERSION}-${ARCH}.log"
+	env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_MACOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_MACOS} -lssl -lcrypto" ./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" --with-boost="${BOOST_ROOT_MACOS}/${ARCH}" --enable-asio-lib --enable-lib-only --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/Mac/${ARCH}" --host=${HOST} &> "/tmp/${NGHTTP2_VERSION}-${ARCH}.log"
 	make >> "/tmp/${NGHTTP2_VERSION}-${ARCH}.log" 2>&1
 	make install >> "/tmp/${NGHTTP2_VERSION}-${ARCH}.log" 2>&1
 	make clean >> "/tmp/${NGHTTP2_VERSION}-${ARCH}.log" 2>&1
@@ -170,9 +169,9 @@ buildIOS()
    
 	echo -e "${subbold}Building ${NGHTTP2_VERSION} for ${PLATFORM} ${IOS_SDK_VERSION} ${archbold}${ARCH}${dim}"
         if [[ "${ARCH}" == "arm64" || "${ARCH}" == "arm64e"  ]]; then
-		./configure --disable-shared --disable-app --disable-threads --enable-lib-only  --prefix="${NGHTTP2}/iOS/${ARCH}" --host="arm-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
+		env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_IOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_IOS} -lssl -lcrypto" ./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib" --with-boost="${BOOST_ROOT_IOS}/${ARCH}" --enable-asio-lib --enable-lib-only --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/iOS/${ARCH}" --host="arm-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
         else
-		./configure --disable-shared --disable-app --disable-threads --enable-lib-only --prefix="${NGHTTP2}/iOS/${ARCH}" --host="${ARCH}-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
+		env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_IOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_IOS} -lssl -lcrypto" ./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib"  --with-boost="${BOOST_ROOT_IOS}/${ARCH}" --enable-asio-lib --enable-lib-only --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/iOS/${ARCH}" --host="${ARCH}-apple-darwin" &> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log"
         fi
 
         make -j8 >> "/tmp/${NGHTTP2_VERSION}-iOS-${ARCH}-${BITCODE}.log" 2>&1
@@ -199,7 +198,7 @@ buildTVOS()
 	export CROSS_SDK="${PLATFORM}${TVOS_SDK_VERSION}.sdk"
 	export BUILD_TOOLS="${DEVELOPER}"
 	export CC="${BUILD_TOOLS}/usr/bin/gcc"
-	export CFLAGS="-arch ${ARCH} -pipe -Os -gdwarf-2 -isysroot ${CROSS_TOP}/SDKs/${CROSS_SDK} -mtvos-version-min=${TVOS_MIN_SDK_VERSION} -fembed-bitcode"
+	export CFLAGS="-arch ${ARCH} -pipe -Os -gdwarf-2 -isysroot ${CROSS_TOP}/SDKs/${CROSS_SDK} -mtvos-version-min=${TVOS_MIN_SDK_VERSION}"
 	export LDFLAGS="-arch ${ARCH} -isysroot ${CROSS_TOP}/SDKs/${CROSS_SDK} -L${OPENSSL}/tvOS/lib ${NGHTTP2LIB}"
 	export LC_CTYPE=C
   
@@ -212,8 +211,8 @@ buildTVOS()
 	# LANG=C sed -i -- 's/D\_REENTRANT\:iOS/D\_REENTRANT\:tvOS/' "./Configure"
 	# chmod u+x ./Configure
 	
-	./configure --disable-shared --disable-app --disable-threads --enable-lib-only  --prefix="${NGHTTP2}/tvOS/${ARCH}" --host="arm-apple-darwin" &> "/tmp/${CURL_VERSION}-tvOS-${ARCH}.log"
-	LANG=C sed -i -- 's/define HAVE_FORK 1/define HAVE_FORK 0/' "config.h"
+	env OPENSSL_CFLAGS="-I${OPENSSL_CFLAGS_TVOS}" OPENSSL_LIBS="-L${OPENSSL_LIBS_TVOS} -lssl -lcrypto" ./configure AR="/usr/bin/ar" RANLIB="/usr/bin/ranlib"  --with-boost="${BOOST_ROOT_TVOS}/${ARCH}" --enable-asio-lib --enable-lib-only --disable-shared --disable-app --disable-threads --prefix="${NGHTTP2}/tvOS/${ARCH}" --host="arm-apple-darwin" &> "/tmp/${CURL_VERSION}-tvOS-${ARCH}.log"
+	LANG=C sed -i -- 's/define HAVE_FORK 1/define HAVE_FORK 0/' "co"
 
 	# add -isysroot to CC=
 	#sed -ie "s!^CFLAG=!CFLAG=-isysroot ${CROSS_TOP}/SDKs/${CROSS_SDK} -mtvos-version-min=${TVOS_MIN_SDK_VERSION} !" "Makefile"
@@ -254,25 +253,27 @@ buildMac "x86_64"
 lipo \
         "${NGHTTP2}/Mac/x86_64/lib/libnghttp2.a" \
         -create -output "${NGHTTP2}/lib/libnghttp2_Mac.a"
+lipo \
+        "${NGHTTP2}/Mac/x86_64/lib/libnghttp2_asio.a" \
+        -create -output "${NGHTTP2}/lib/libnghttp2_asio_Mac.a"
 
 echo -e "${bold}Building iOS libraries (bitcode)${dim}"
-buildIOS "armv7" "bitcode"
-buildIOS "armv7s" "bitcode"
-buildIOS "arm64" "bitcode"
-buildIOS "arm64e" "bitcode"
-buildIOS "x86_64" "bitcode"
-buildIOS "i386" "bitcode"
+
+buildIOS "arm64" "nobitcode"
+buildIOS "arm64e" "nobitcode"
+buildIOS "x86_64" "nobitcode"
 
 lipo \
-	"${NGHTTP2}/iOS/armv7/lib/libnghttp2.a" \
-	"${NGHTTP2}/iOS/armv7s/lib/libnghttp2.a" \
-	"${NGHTTP2}/iOS/i386/lib/libnghttp2.a" \
 	"${NGHTTP2}/iOS/arm64/lib/libnghttp2.a" \
-	"${NGHTTP2}/iOS/arm64e/lib/libnghttp2.a" \
 	"${NGHTTP2}/iOS/x86_64/lib/libnghttp2.a" \
 	-create -output "${NGHTTP2}/lib/libnghttp2_iOS.a"
+lipo \
+        "${NGHTTP2}/iOS/arm64/lib/libnghttp2_asio.a" \
+        "${NGHTTP2}/iOS/x86_64/lib/libnghttp2_asio.a" \
+        -create -output "${NGHTTP2}/lib/libnghttp2_asio_iOS.a"
 
 echo -e "${bold}Building tvOS libraries${dim}"
+
 buildTVOS "arm64"
 buildTVOS "x86_64"
 
@@ -280,6 +281,10 @@ lipo \
         "${NGHTTP2}/tvOS/arm64/lib/libnghttp2.a" \
         "${NGHTTP2}/tvOS/x86_64/lib/libnghttp2.a" \
         -create -output "${NGHTTP2}/lib/libnghttp2_tvOS.a"
+lipo \
+        "${NGHTTP2}/tvOS/arm64/lib/libnghttp2_asio.a" \
+        "${NGHTTP2}/tvOS/x86_64/lib/libnghttp2_asio.a" \
+        -create -output "${NGHTTP2}/lib/libnghttp2_asio_tvOS.a"
 
 echo -e "${bold}Cleaning up${dim}"
 rm -rf /tmp/${NGHTTP2_VERSION}-*

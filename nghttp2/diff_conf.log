@@ -1,0 +1,792 @@
+7c7
+<   $ ./configure --with-boost=/Users/kunihito/work/engine/depends/ios/boost_1_72_0 --enable-asio-lib --disable-shared --disable-app --disable-threads --enable-lib-only --prefix=/Users/kunihito/work/engine/depends/Build-OpenSSL-cURL/nghttp2/../nghttp2/iOS/arm64 --host=arm-apple-darwin
+---
+>   $ ./configure --with-boost=/Users/kunihito/work/engine/depends/ios/boost_1_72_0 --enable-asio-lib --disable-shared --disable-app --disable-threads --enable-lib-only --prefix=/Users/kunihito/work/engine/depends/Build-OpenSSL-cURL/nghttp2/../nghttp2/iOS/x86_64 --host=x86_64-apple-darwin
+33,34c33,34
+< Default processor set: 497 tasks, 2452 threads, 8 processors
+< Load average: 10.73, Mach factor: 2.51
+---
+> Default processor set: 506 tasks, 2419 threads, 8 processors
+> Load average: 3.26, Mach factor: 4.73
+58c58
+< configure:3086: checking for arm-apple-darwin-gcc
+---
+> configure:3086: checking for x86_64-apple-darwin-gcc
+84c84
+< configure:3444: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:3444: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+90c90
+< configure:3514: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:3514: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+94c94
+< configure:3570: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:3570: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+97,98c97,99
+< ./configure: line 3583: ./conftest: Bad CPU type in executable
+< configure:3585: $? = 126
+---
+> dyld: attempt to run simulator program outside simulator (DYLD_ROOT_PATH not set)
+> ./configure: line 3583: 97582 Abort trap: 6           ./conftest$ac_cv_exeext
+> configure:3585: $? = 134
+101c102
+< configure:3627: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:3627: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+105c106
+< configure:3675: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:3675: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+113c114
+< configure:3834: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc  -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:3834: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc  -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+165c166
+< configure:4215: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4215: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+169c170
+< configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+173c174
+< configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+177c178
+< configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+181c182
+< configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+185c186
+< configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+189c190
+< configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+193c194
+< configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+197c198
+< configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+201c202
+< configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4312: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+205c206
+< configure:4325: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4325: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+296c297
+< configure:4364: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:4364: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+302c303
+< configure:4463: result: arm-apple-darwin
+---
+> configure:4463: result: x86_64-apple-darwin
+315c316
+< configure:4900: checking for arm-apple-darwin-dumpbin
+---
+> configure:4900: checking for x86_64-apple-darwin-dumpbin
+317c318
+< configure:4900: checking for arm-apple-darwin-link
+---
+> configure:4900: checking for x86_64-apple-darwin-link
+326c327
+< configure:5023: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:5023: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+329,330c330,331
+< 000000000000090c B _some_variable
+< 0000000000000680 t l_llvm.cmdline
+---
+> 0000000000000930 B _some_variable
+> 00000000000006b0 t l_llvm.cmdline
+332,335d332
+< 0000000000000000 t ltmp0
+< 000000000000090c b ltmp1
+< 0000000000000000 t ltmp2
+< 0000000000000680 t ltmp3
+341c338
+< configure:5230: checking how to convert x86_64-apple-darwin19.3.0 file names to arm-apple-darwin format
+---
+> configure:5230: checking how to convert x86_64-apple-darwin19.3.0 file names to x86_64-apple-darwin format
+347c344
+< configure:5345: checking for arm-apple-darwin-objdump
+---
+> configure:5345: checking for x86_64-apple-darwin-objdump
+354c351
+< configure:5689: checking for arm-apple-darwin-dlltool
+---
+> configure:5689: checking for x86_64-apple-darwin-dlltool
+361c358
+< configure:5832: checking for arm-apple-darwin-ar
+---
+> configure:5832: checking for x86_64-apple-darwin-ar
+367c364
+< configure:5957: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:5957: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+377c374
+< configure:6001: checking for arm-apple-darwin-strip
+---
+> configure:6001: checking for x86_64-apple-darwin-strip
+382c379
+< configure:6100: checking for arm-apple-darwin-ranlib
+---
+> configure:6100: checking for x86_64-apple-darwin-ranlib
+391c388
+< configure:6464: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:6464: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+395c392
+< configure:6464: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:6464: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+398,399c395,396
+< configure:6537: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c conftstm.o >&5
+< warning: (arm64)  could not find object file symbol for symbol _main
+---
+> configure:6537: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c conftstm.o >&5
+> warning: (x86_64)  could not find object file symbol for symbol _main
+408c405
+< configure:7008: checking for arm-apple-darwin-mt
+---
+> configure:7008: checking for x86_64-apple-darwin-mt
+415c412
+< configure:7128: checking for arm-apple-darwin-dsymutil
+---
+> configure:7128: checking for x86_64-apple-darwin-dsymutil
+420c417
+< configure:7220: checking for arm-apple-darwin-nmedit
+---
+> configure:7220: checking for x86_64-apple-darwin-nmedit
+425c422
+< configure:7312: checking for arm-apple-darwin-lipo
+---
+> configure:7312: checking for x86_64-apple-darwin-lipo
+430c427
+< configure:7404: checking for arm-apple-darwin-otool
+---
+> configure:7404: checking for x86_64-apple-darwin-otool
+435c432
+< configure:7496: checking for arm-apple-darwin-otool64
+---
+> configure:7496: checking for x86_64-apple-darwin-otool64
+440c437
+< /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -o libconftest.dylib -dynamiclib -Wl,-single_module conftest.c
+---
+> /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -o libconftest.dylib -dynamiclib -Wl,-single_module conftest.c
+443c440
+< configure:7667: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -Wl,-exported_symbols_list,conftest.sym conftest.c  >&5
+---
+> configure:7667: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -Wl,-exported_symbols_list,conftest.sym conftest.c  >&5
+447c444
+< /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode -c -o conftest.o conftest.c
+---
+> /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode -c -o conftest.o conftest.c
+451,452c448,449
+< /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -o conftest conftest.c -Wl,-force_load,./libconftest.a
+< ld: warning: ignoring file ./libconftest.a, building for iOS-arm64 but attempting to link with file built for iOS-arm64
+---
+> /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -o conftest conftest.c -Wl,-force_load,./libconftest.a
+> ld: warning: ignoring file ./libconftest.a, building for iOS Simulator-x86_64 but attempting to link with file built for iOS Simulator-x86_64
+455c452
+< configure:7786: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:7786: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+461c458
+< configure:8339: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -fno-rtti -fno-exceptions conftest.c >&5
+---
+> configure:8339: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -fno-rtti -fno-exceptions conftest.c >&5
+467c464
+< configure:8753: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -fno-common -DPIC -DPIC conftest.c >&5
+---
+> configure:8753: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -fno-common -DPIC -DPIC conftest.c >&5
+473c470
+< configure:8863: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -o out/conftest2.o conftest.c >&5
+---
+> configure:8863: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -o out/conftest2.o conftest.c >&5
+493c490
+< configure:12135: result: arm-apple-darwin
+---
+> configure:12135: result: x86_64-apple-darwin
+498c495
+< configure:12368: checking for arm-apple-darwin-strip
+---
+> configure:12368: checking for x86_64-apple-darwin-strip
+515c512
+< configure:13085: checking for arm-apple-darwin-gcc
+---
+> configure:13085: checking for x86_64-apple-darwin-gcc
+548c545
+< configure:13689: checking for arm-apple-darwin-g++
+---
+> configure:13689: checking for x86_64-apple-darwin-g++
+550c547
+< configure:13689: checking for arm-apple-darwin-c++
+---
+> configure:13689: checking for x86_64-apple-darwin-c++
+552c549
+< configure:13689: checking for arm-apple-darwin-gpp
+---
+> configure:13689: checking for x86_64-apple-darwin-gpp
+554c551
+< configure:13689: checking for arm-apple-darwin-aCC
+---
+> configure:13689: checking for x86_64-apple-darwin-aCC
+556c553
+< configure:13689: checking for arm-apple-darwin-CC
+---
+> configure:13689: checking for x86_64-apple-darwin-CC
+558c555
+< configure:13689: checking for arm-apple-darwin-cxx
+---
+> configure:13689: checking for x86_64-apple-darwin-cxx
+560c557
+< configure:13689: checking for arm-apple-darwin-cc++
+---
+> configure:13689: checking for x86_64-apple-darwin-cc++
+562c559
+< configure:13689: checking for arm-apple-darwin-cl.exe
+---
+> configure:13689: checking for x86_64-apple-darwin-cl.exe
+564c561
+< configure:13689: checking for arm-apple-darwin-FCC
+---
+> configure:13689: checking for x86_64-apple-darwin-FCC
+566c563
+< configure:13689: checking for arm-apple-darwin-KCC
+---
+> configure:13689: checking for x86_64-apple-darwin-KCC
+568c565
+< configure:13689: checking for arm-apple-darwin-RCC
+---
+> configure:13689: checking for x86_64-apple-darwin-RCC
+570c567
+< configure:13689: checking for arm-apple-darwin-xlC_r
+---
+> configure:13689: checking for x86_64-apple-darwin-xlC_r
+572c569
+< configure:13689: checking for arm-apple-darwin-xlC
+---
+> configure:13689: checking for x86_64-apple-darwin-xlC
+757c754
+< configure:17583: checking for arm-apple-darwin-pkg-config
+---
+> configure:17583: checking for x86_64-apple-darwin-pkg-config
+811c808
+< configure:19207: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:19207: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+831c828
+< configure:19338: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c -lcunit   >&5
+---
+> configure:19338: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c -lcunit   >&5
+886c883
+< configure:19412: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c -lev -lm  >&5
+---
+> configure:19412: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c -lev -lm  >&5
+993,994c990,991
+< configure:19980: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+< Undefined symbols for architecture arm64:
+---
+> configure:19980: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+> Undefined symbols for architecture x86_64:
+996,997c993,994
+<       _main in conftest-852593.o
+< ld: symbol(s) not found for architecture arm64
+---
+>       _main in conftest-6fcf3e.o
+> ld: symbol(s) not found for architecture x86_64
+1050c1047
+< configure:19980: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c -ljemalloc -pthread  >&5
+---
+> configure:19980: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c -ljemalloc -pthread  >&5
+1106,1107c1103,1104
+< configure:20041: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+< Undefined symbols for architecture arm64:
+---
+> configure:20041: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+> Undefined symbols for architecture x86_64:
+1109,1110c1106,1107
+<       _main in conftest-c713c3.o
+< ld: symbol(s) not found for architecture arm64
+---
+>       _main in conftest-f22fd5.o
+> ld: symbol(s) not found for architecture x86_64
+1163c1160
+< configure:20041: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c -ljemalloc -pthread  >&5
+---
+> configure:20041: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c -ljemalloc -pthread  >&5
+1227c1224
+< configure:20477: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -I/Users/kunihito/work/engine/depends/ios/boost_1_72_0/include -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -L/Users/kunihito/work/engine/depends/ios/boost_1_72_0/lib conftest.c -lboost_system   >&5
+---
+> configure:20477: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -I/Users/kunihito/work/engine/depends/ios/boost_1_72_0/include -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -L/Users/kunihito/work/engine/depends/ios/boost_1_72_0/lib conftest.c -lboost_system   >&5
+1239c1236
+< configure:20662: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -I/Users/kunihito/work/engine/depends/ios/boost_1_72_0/include -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -L/Users/kunihito/work/engine/depends/ios/boost_1_72_0/lib conftest.c -lboost_system   >&5
+---
+> configure:20662: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -I/Users/kunihito/work/engine/depends/ios/boost_1_72_0/include -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -L/Users/kunihito/work/engine/depends/ios/boost_1_72_0/lib conftest.c -lboost_system   >&5
+1252c1249
+< configure:20925: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -I/Users/kunihito/work/engine/depends/ios/boost_1_72_0/include -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -L/Users/kunihito/work/engine/depends/ios/boost_1_72_0/lib conftest.c -lboost_thread   >&5
+---
+> configure:20925: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -I/Users/kunihito/work/engine/depends/ios/boost_1_72_0/include -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -L/Users/kunihito/work/engine/depends/ios/boost_1_72_0/lib conftest.c -lboost_thread   >&5
+1263c1260
+< configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1273c1270
+< configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1285c1282
+< configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1295c1292
+< configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1305c1302
+< configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1315c1312
+< configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1325c1322
+< configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1341c1338
+< configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1351c1348
+< configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1361c1358
+< configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1371c1368
+< configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21307: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1383c1380
+< configure:21319: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21319: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1385c1382
+< configure:21319: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21319: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1489c1486
+< configure:21330: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21330: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1491c1488
+< configure:21330: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21330: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1595c1592
+< configure:21341: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21341: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1599c1596
+< configure:21355: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21355: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1603c1600
+< configure:21367: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21367: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1607c1604
+< configure:21381: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21381: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1611c1608
+< configure:21395: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21395: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1613c1610
+< configure:21395: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21395: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1721c1718
+< configure:21406: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21406: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1723c1720
+< configure:21406: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21406: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1831c1828
+< configure:21417: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21417: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1833c1830
+< configure:21417: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21417: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1944c1941
+< configure:21428: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21428: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+1946c1943
+< configure:21428: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21428: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2057c2054
+< configure:21439: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21439: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2059c2056
+< configure:21439: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21439: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2163c2160
+< configure:21450: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21450: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2165c2162
+< configure:21450: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21450: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2271c2268
+< configure:21491: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21491: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2273c2270
+< configure:21491: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21491: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2377c2374
+< configure:21516: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21516: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2379c2376
+< configure:21561: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21561: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2381c2378
+< configure:21579: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21579: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2458c2455
+< configure:21741: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21741: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2464c2461
+< configure:21850: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21850: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2468c2465
+< configure:21968: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21968: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2472c2469
+< configure:21977: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21977: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2476c2473
+< configure:21990: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:21990: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2480c2477
+< configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2482c2479
+< configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2590c2587
+< configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2698c2695
+< configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2806c2803
+< configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2914c2911
+< configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2916c2913
+< configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2918c2915
+< configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2920c2917
+< configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22020: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2924c2921
+< configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+2926c2923
+< configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+3035c3032
+< configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+3144c3141
+< configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+3253c3250
+< configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+3362c3359
+< configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+3364c3361
+< configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+3366c3363
+< configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+3368c3365
+< configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22054: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+3376c3373
+< configure:22165: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22165: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3454c3451
+< configure:22186: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22186: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+3631c3628
+< configure:22199: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22199: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3635c3632
+< configure:22199: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22199: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3649c3646
+< configure:22399: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22399: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+3653c3650
+< configure:22412: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22412: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3657c3654
+< configure:22445: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22445: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+3783c3780
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3792,3793c3789,3790
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+< Undefined symbols for architecture arm64:
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+> Undefined symbols for architecture x86_64:
+3795,3796c3792,3793
+<       _main in conftest-74396b.o
+< ld: symbol(s) not found for architecture arm64
+---
+>       _main in conftest-19f582.o
+> ld: symbol(s) not found for architecture x86_64
+3908c3905
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3912c3909
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3916c3913
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3920c3917
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3924c3921
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3933c3930
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3942c3939
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3951c3948
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3955c3952
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3959c3956
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3968c3965
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3977c3974
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3986c3983
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+3995c3992
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+4004c4001
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+4013c4010
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+4022c4019
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+4031c4028
+< configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+---
+> configure:22573: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+4035,4036c4032,4033
+< configure:22585: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk conftest.c  >&5
+< Undefined symbols for architecture arm64:
+---
+> configure:22585: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -o conftest -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk conftest.c  >&5
+> Undefined symbols for architecture x86_64:
+4038,4039c4035,4036
+<       _main in conftest-0f0f4a.o
+< ld: symbol(s) not found for architecture arm64
+---
+>       _main in conftest-3f3cf8.o
+> ld: symbol(s) not found for architecture x86_64
+4169c4166
+< configure:22596: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+---
+> configure:22596: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  conftest.c >&5
+4173c4170
+< configure:24287: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -fvisibility=hidden  conftest.c >&5
+---
+> configure:24287: /Applications/Xcode.app/Contents/Developer/usr/bin/gcc -c -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode  -fvisibility=hidden  conftest.c >&5
+4232a4230
+> config.status:1513: config.h is unchanged
+4235a4234
+> make: Nothing to be done for `am--depfiles'.
+4237a4237
+> make: Nothing to be done for `am--depfiles'.
+4239a4240
+> make: Nothing to be done for `am--depfiles'.
+4241a4243
+> make: Nothing to be done for `am--depfiles'.
+4243a4246
+> make: Nothing to be done for `am--depfiles'.
+4249c4252
+<     Install prefix:  /Users/kunihito/work/engine/depends/Build-OpenSSL-cURL/nghttp2/../nghttp2/iOS/arm64
+---
+>     Install prefix:  /Users/kunihito/work/engine/depends/Build-OpenSSL-cURL/nghttp2/../nghttp2/iOS/x86_64
+4252,4253c4255,4256
+<       Host:          arm-apple-darwin
+<       Target:        arm-apple-darwin
+---
+>       Host:          x86_64-apple-darwin
+>       Target:        x86_64-apple-darwin
+4256,4257c4259,4260
+<       CFLAGS:         -arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode
+<       LDFLAGS:        -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk
+---
+>       CFLAGS:         -arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode
+>       LDFLAGS:        -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk
+4332c4335
+< ac_cv_env_CFLAGS_value='-arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode'
+---
+> ac_cv_env_CFLAGS_value='-arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode'
+4354c4357
+< ac_cv_env_LDFLAGS_value='-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk'
+---
+> ac_cv_env_LDFLAGS_value='-arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk'
+4396c4399
+< ac_cv_env_host_alias_value=arm-apple-darwin
+---
+> ac_cv_env_host_alias_value=x86_64-apple-darwin
+4454c4457
+< ac_cv_host=arm-apple-darwin
+---
+> ac_cv_host=x86_64-apple-darwin
+4502c4505
+< ac_cv_target=arm-apple-darwin
+---
+> ac_cv_target=x86_64-apple-darwin
+4595c4598
+< CFLAGS='-arch arm64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -miphoneos-version-min=10.0 -fembed-bitcode'
+---
+> CFLAGS='-arch x86_64 -pipe -Os -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -miphoneos-version-min=10.0 -fembed-bitcode'
+4655c4658
+< LDFLAGS='-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk'
+---
+> LDFLAGS='-arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk'
+4750,4752c4753,4755
+< host='arm-apple-darwin'
+< host_alias='arm-apple-darwin'
+< host_cpu='arm'
+---
+> host='x86_64-apple-darwin'
+> host_alias='x86_64-apple-darwin'
+> host_cpu='x86_64'
+4769c4772
+< prefix='/Users/kunihito/work/engine/depends/Build-OpenSSL-cURL/nghttp2/../nghttp2/iOS/arm64'
+---
+> prefix='/Users/kunihito/work/engine/depends/Build-OpenSSL-cURL/nghttp2/../nghttp2/iOS/x86_64'
+4778c4781
+< target='arm-apple-darwin'
+---
+> target='x86_64-apple-darwin'
+4780c4783
+< target_cpu='arm'
+---
+> target_cpu='x86_64'
